@@ -11,7 +11,6 @@ int main( int argc, char** argv ) {
     std::string base_url("https://pages.cs.wisc.edu/~remzi/OSTEP/");
     std::unique_ptr<http_gets> curl = std::unique_ptr<http_gets>(new http_gets(base_url,80));
 
-    std::ifstream infile("test.txt");
     std::string line;
     std::regex chapterless_regex("yellow><a href=(\\S+.pdf)");
     std::regex chapter_regex("<small>(\\d+)</small> (<i>)?<a href=(\\S+.pdf)");
