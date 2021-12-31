@@ -1,18 +1,5 @@
-#define _XOPEN_SOURCE 700
-#include <arpa/inet.h>
-#include <assert.h>
 #include <curl/curl.h>
-#include <iomanip>
-#include <iostream>
-#include <memory>
-#include <netdb.h> /* getprotobyname */
-#include <netinet/in.h>
-#include <regex>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string>
-#include <sys/socket.h>
-#include <unistd.h>
 
 #include "http_gets.h"
 
