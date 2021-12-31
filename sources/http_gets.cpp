@@ -30,12 +30,11 @@ static size_t get_pdf(void *contents, size_t size, size_t nmemb, FILE *stream) {
     return written;
 }
 
-int http_gets::download_file(int chapter, std::string filename) {
+int http_gets::download_file(std::string chapter, std::string filename) {
     CURL *curl;
     FILE *fp;
     curl = curl_easy_init();
-    std::string chapter_name = std::to_string(chapter);
-    std::string new_filename = chapter_name + "_" + filename;
+    std::string new_filename = chapter + "_" + filename;
     if(curl) {
         fp = fopen(new_filename.c_str(), "wb");
         std::string remote_file = m_hostname + filename;
@@ -56,11 +55,10 @@ static size_t get_html(void *contents, size_t size, size_t nmemb, void *userp) {
 
 std::string http_gets::download_html() {
     CURL *curl;
-    m_html("");
     curl = curl_easy_init();
     if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL,           m_hostname.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, get_html);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA,     &m_html);
         curl_easy_perform(curl);
         curl_easy_cleanup(curl);

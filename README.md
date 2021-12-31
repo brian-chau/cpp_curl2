@@ -2,6 +2,4 @@
 
 This application builds on another application that I wrote that uses libCURL -- you can find the project [source code here](https://github.com/brian-chau/cpp_curl).
 
-With this version, instead of downloading HTML, I download the files located at the URLs.
-
-In this version, I plan to parse the HTML that lists the files to download like a web scraper, and then download the files listed at the URLs.
+With this version, I scrape the website for the URL and an associated chapter number, so that the files will be named in order that they are downloaded.

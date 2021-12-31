@@ -4,7 +4,7 @@ class http_gets{
 public:
                    http_gets(std::string hostname, unsigned int port=80);
                   ~http_gets();
-    int            download_file(int chapter, std::string filename);
+    int            download_file(std::string chapter, std::string filename);
     std::string    download_html();
 
 private:
