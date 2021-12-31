@@ -5,3 +5,7 @@ This application builds on another application that I wrote that uses libCURL --
 With this version, I scrape the "Operating Systems: Three Easy Steps" website for the PDF URLs and an associated chapter number, so that the files will be named in order that they are downloaded.
 
 This is only for my own personal use and not for commercial use.
+
+The application takes no arguments, and simply extracts data from a specific URL like this:
+
+> ./http_gets
